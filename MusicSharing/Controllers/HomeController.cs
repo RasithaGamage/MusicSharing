@@ -14,7 +14,7 @@ namespace MusicSharing.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult MainPage()
         {
             ViewBag.Message = "Your application description page.";
 

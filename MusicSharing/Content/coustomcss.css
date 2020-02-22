@@ -1,0 +1,49 @@
+﻿.boder {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e5e6eb;
+    margin-top:5%
+}
+.main {
+ margin-top:10%
+}
+.image {
+    width: 500px;
+
+    margin-left: -14px;
+}
+h3 {
+    text-align:center;
+   
+}
+.hedding {
+    margin-top:2%;
+    margin-bottom:2%;
+    background-color:lightblue;
+    padding:0.2%;
+    border-radius:5px
+}
+
+.cover {
+   
+    height: 500px;
+}
+container {
+    position: relative;
+
+}
+
+.courses {
+    margin-top: 5%;
+    position: relative;
+    margin-left:30px
+}
+.courses div {
+    background-color:gainsboro;
+    margin-top:1%;
+
+}
+.courses div h4 {
+    font-weight: bold;
+    
+}
