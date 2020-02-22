@@ -18,6 +18,6 @@ namespace MusicSharing
         {
         }
 
-        public DbSet<Music_File> Music_File { get; set; }
+        public DbSet<MusicFile> MusicFile { get; set; }
     }
 }
