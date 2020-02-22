@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "ManageUserRoles";
+}
+
+<link href="~/Content/coustomcss.css" rel="stylesheet" />
+<div class="d-flex p-2 hedding">
+    <h3 class="text-center">Manage User Roles</h3>
+
+</div>
+@Html.ActionLink("Create New Role", "Create") | @Html.ActionLink("Manage User Role", "ManageUsers")
+<hr />
+
+
+
+@using (Html.BeginForm("RoleAddToUser", "Role", FormMethod.Post))
+{
+    <strong><p style="color:darkorange">Add Role to User</p></strong>
+
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <p>
+        Username : @Html.TextBox("UserName")
+        Role Name: @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
+
+    </p>
+
+    <input type="submit" value="Save" class="btn btn-primary" />
+}
+<hr />
+
+
+@using (Html.BeginForm("GetRoles", "Role", FormMethod.Post))
+{
+    <strong><p style="color:darkorange">Get Roles for a Use</p></strong>
+    @Html.AntiForgeryToken()
+    <p>
+        Username : @Html.TextBox("UserName")
+
+    </p>
+    <input type="submit" value="Get Roles for this User" class="btn btn-success" />
+}
+
+@if (ViewBag.RolesForThisUser != null)
+{
+    <div style="background-color:aliceblue;">
+        <p>Roles for this user </p>
+        <ol>
+            @foreach (string s in ViewBag.RolesForThisUser)
+            {
+                <li>@s</li>
+            }
+        </ol>
+    </div>
+}
+
+<hr />
+
+
+@using (Html.BeginForm("DeleteRoleForUser", "Role", FormMethod.Post))
+{
+    <strong><p style="color:darkorange">Delete A User from a Role</p></strong>
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <p>
+        Username : @Html.TextBox("UserName")
+        Role Name: @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
+
+    </p>
+
+    <input type="submit" value="Delete this user from Role" class="btn btn-danger" />
+}
