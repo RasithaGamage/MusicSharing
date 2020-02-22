@@ -25,7 +25,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
 
-                    <li>@Html.ActionLink("Branches", "Index", "Branches")</li>
+         
 
                     @if (this.User.IsInRole("Admin"))
                     {
@@ -35,8 +35,8 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="@Url.Action("SearchCourse", "Courses")">Search Courses</a></li>
-                                <li><a href="@Url.Action("AddCourse", "Courses")">Add New Course</a></li>
+                                <li><a href="@Url.Action("SearchMp3", "Music")">Search Mp3</a></li>
+                                <li><a href="@Url.Action("AddMp3", "Music")">Add Mp3</a></li>
 
                             </ul>
                         </li>
@@ -44,7 +44,7 @@
 
                     @if (this.User.IsInRole("User"))
                     {
-                        <li>@Html.ActionLink("Courses", "SearchCourse", "Courses")</li>
+                        <li>@Html.ActionLink("Courses", "SearchMp3", "Music")</li>
                     }
                     @if (this.User.IsInRole("Admin"))
                     {

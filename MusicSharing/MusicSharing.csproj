@@ -192,6 +192,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MusicController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="DefaultConnection.cs" />
     <Compile Include="Global.asax.cs">
@@ -279,9 +280,12 @@
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Role\ManageUsers.cshtml" />
+    <Content Include="Views\AddMp3.cshtml" />
+    <Content Include="Views\SearchMp3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Music\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
