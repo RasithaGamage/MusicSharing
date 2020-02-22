@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -26,5 +27,13 @@ namespace MusicSharing.Controllers
 
             return View();
         }
+
+        public ActionResult MyPage()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
     }
 }
