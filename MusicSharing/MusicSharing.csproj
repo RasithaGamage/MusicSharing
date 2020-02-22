@@ -282,10 +282,11 @@
     <Content Include="Views\Role\ManageUsers.cshtml" />
     <Content Include="Views\AddMp3.cshtml" />
     <Content Include="Views\SearchMp3.cshtml" />
+    <Content Include="Views\Music\SearchMp3.cshtml" />
+    <Content Include="Views\Music\AddMp3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Music\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
