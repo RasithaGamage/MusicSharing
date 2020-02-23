@@ -18,5 +18,6 @@ namespace MusicSharing
         {
            
         }
+        public virtual DbSet<MusicFile> MusicFile { get; set; }
     }
 }

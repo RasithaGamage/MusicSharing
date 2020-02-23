@@ -28,7 +28,7 @@ namespace MusicSharing.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public ActionResult AddMusic()
         {
 
