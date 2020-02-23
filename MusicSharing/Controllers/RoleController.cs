@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using log4net;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using MusicSharing.Models;
 using System;
@@ -12,10 +13,13 @@ namespace MusicSharing.Controllers
     public class RoleController : Controller
     {
         private ApplicationDbContext context = new ApplicationDbContext();
+        private static readonly ILog Log = LogManager.GetLogger(typeof(DefaultController));
 
         [Authorize(Roles = "Admin")]//Show Role List
         public ActionResult Index()
         {
+           
+            Log.Info(User.Identity.GetUserName()+ " Was access MusicSharing Index");
             return View(context.Roles.ToList());
         }
 

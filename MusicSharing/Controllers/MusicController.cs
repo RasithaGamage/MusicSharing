@@ -1,4 +1,5 @@
-﻿using MusicSharing.Models;
+﻿using log4net;
+using MusicSharing.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +11,8 @@ namespace MusicSharing.Controllers
 {
     public class MusicController : Controller
     {
+
+        private static readonly ILog Log = LogManager.GetLogger(typeof(DefaultController));
         // GET: Music
         public ActionResult SearchMp3()
         {

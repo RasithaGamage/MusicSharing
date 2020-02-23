@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace MusicSharing.Controllers
 {
     public class HomeController : Controller
     {
+        private static readonly ILog Log = LogManager.GetLogger(typeof(DefaultController));
+
         public ActionResult Index()
         {
             return View();

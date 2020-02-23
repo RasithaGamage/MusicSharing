@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using log4net;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -15,8 +16,10 @@ namespace MusicSharing.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private static readonly ILog Log = LogManager.GetLogger(typeof(DefaultController));
 
         public AccountController()
         {
