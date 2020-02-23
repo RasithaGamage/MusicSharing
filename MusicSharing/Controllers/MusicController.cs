@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicSharing.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -43,8 +44,36 @@ namespace MusicSharing.Controllers
                             fname = file.FileName;
                         }
 
-                        fname = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Content/music/"), fname);
-                        file.SaveAs(fname);
+                        string fname1 = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Content/music/"), fname);
+
+                        //use threads
+
+                        using (DefaultConnection db=new DefaultConnection()) {
+
+                            DateTime dt =  DateTime.Now;
+                            String id =  dt.ToString("yyyyMMddHHmmssffff");
+
+                           
+                            var mid =  (from d in db.MusicFile orderby d.musicFileId descending select d.musicFileId).FirstOrDefault();
+
+                            MusicFile music = new MusicFile
+                            {
+                                musicFileId = mid + 1,
+                                musicFileName = fname,
+                                songName = Request.Form["songTitle"],
+                                singer = Request.Form["singer"],
+                                musicFileUrl = fname1,
+                                size =  file.ContentLength.ToString(),
+                                addedDate = DateTime.Now
+                            };
+
+                            db.MusicFile.Add(music);
+                            db.SaveChanges();
+
+                        }
+
+                        file.SaveAs(fname1);
+
                     }
 
                     return Json("File Uploaded Successfully!");
