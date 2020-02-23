@@ -16,10 +16,8 @@ namespace MusicSharing
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-           
         }
 
-        public virtual DbSet<Log> Logs { get; set; }
-  
+        public DbSet<MusicFile> MusicFile { get; set; }
     }
 }
