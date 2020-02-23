@@ -4,6 +4,7 @@ namespace MusicSharing
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using MusicSharing.Models;
 
     public partial class DefaultConnection : DbContext
     {
@@ -15,6 +16,10 @@ namespace MusicSharing
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+           
         }
+
+        public virtual DbSet<Log> Logs { get; set; }
+  
     }
 }
