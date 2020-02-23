@@ -42,6 +42,7 @@ namespace MusicSharing.Controllers
                 });
                 context.SaveChanges();
                 ViewBag.ResultMessage = "Role created successfully !";
+                Log.Info(User.Identity.GetUserName() + " Was added new role call " + collection["RoleName"]);
                 return View("Create");
             }
             catch
@@ -55,6 +56,7 @@ namespace MusicSharing.Controllers
             var thisRole = context.Roles.Where(r => r.Name.Equals(RoleName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
             context.Roles.Remove(thisRole);
             context.SaveChanges();
+            Log.Info(User.Identity.GetUserName() + " Was Deleted role call " + RoleName);
             return RedirectToAction("Create");
         }
 
@@ -64,7 +66,7 @@ namespace MusicSharing.Controllers
         public ActionResult Edit(string roleName)
         {
             var thisRole = context.Roles.Where(r => r.Name.Equals(roleName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
-
+            Log.Info(User.Identity.GetUserName() + " Was  open Role Edit page");
             return View(thisRole);
         }
 
@@ -78,11 +80,12 @@ namespace MusicSharing.Controllers
             {
                 context.Entry(role).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
-
+                Log.Info(User.Identity.GetUserName() + " Was Edited role call ");
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception ex)
             {
+                Log.Error("Error occerd when Edit the Role", ex);
                 return View();
             }
         }
@@ -91,6 +94,7 @@ namespace MusicSharing.Controllers
         public ActionResult ManageUserRoles()
         {
             // prepopulat roles for the view dropdown
+            Log.Info(User.Identity.GetUserName() + " Was  opened Role ManageUserRoles page");
             var list = context.Roles.OrderBy(r => r.Name).ToList().Select(rr => new SelectListItem { Value = rr.Name.ToString(), Text = rr.Name }).ToList();
             ViewBag.Roles = list;
             return View();
@@ -100,6 +104,7 @@ namespace MusicSharing.Controllers
         public ActionResult ManageUsers()
         {
             // prepopulat roles for the view dropdown
+            Log.Info(User.Identity.GetUserName() + " Was  opened Role ManageUsers page");
             var list = context.Roles.OrderBy(r => r.Name).ToList().Select(rr =>
             new SelectListItem { Value = rr.Name.ToString(), Text = rr.Name }).ToList();
             ViewBag.Roles = list;
@@ -110,6 +115,8 @@ namespace MusicSharing.Controllers
         [ValidateAntiForgeryToken]//Assign role to User
         public ActionResult RoleAddToUser(string UserName, string RoleName)
         {
+
+            Log.Info(User.Identity.GetUserName() + " Was  Assign role to User :" + UserName);
             ApplicationUser user = context.Users.Where(u => u.UserName.Equals(UserName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context));
             manager.AddToRole(user.Id, RoleName);
@@ -134,7 +141,7 @@ namespace MusicSharing.Controllers
                 var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context));
 
                 ViewBag.RolesForThisUser = manager.GetRoles(user.Id);
-
+                Log.Info(User.Identity.GetUserName() + " Was  Checked the role of " + UserName);
                 // prepopulat roles for the view dropdown
                 var list = context.Roles.OrderBy(r => r.Name).ToList().Select(rr => new SelectListItem { Value = rr.Name.ToString(), Text = rr.Name }).ToList();
                 ViewBag.Roles = list;
@@ -151,11 +158,12 @@ namespace MusicSharing.Controllers
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context));
 
             ApplicationUser user = context.Users.Where(u => u.UserName.Equals(UserName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
-
+           
             if (manager.IsInRole(user.Id, RoleName))
             {
                 manager.RemoveFromRole(user.Id, RoleName);
                 ViewBag.ResultMessage = "Role removed from this user successfully !";
+                Log.Info(User.Identity.GetUserName() + " Was  remove role of " + RoleName + " form " + UserName);
             }
             else
             {
