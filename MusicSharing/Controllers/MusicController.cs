@@ -55,10 +55,7 @@ namespace MusicSharing.Controllers
 
                             DateTime dt =  DateTime.Now;
                             String id =  dt.ToString("yyyyMMddHHmmssffff");
-
-                           
                             var mid =  (from d in db.MusicFile orderby d.musicFileId descending select d.musicFileId).FirstOrDefault();
-
                             MusicFile music = new MusicFile
                             {
                                 musicFileId = mid + 1,
@@ -69,14 +66,10 @@ namespace MusicSharing.Controllers
                                 size =  file.ContentLength.ToString(),
                                 addedDate = DateTime.Now
                             };
-
                             db.MusicFile.Add(music);
                             db.SaveChanges();
-
                         }
-
                         file.SaveAs(fname1);
-
                     }
 
                     return Json("File Uploaded Successfully!");
