@@ -5,3 +5,53 @@
 
 <h2>SearchMp3</h2>
 
+@model IEnumerable<MusicSharing.Models.MusicFile>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.songName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.singer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.size)
+        </th>
+        <th>Listen</th>
+        <th>Actions</th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.songName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.singer)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => item.size)
+</td>
+        @{
+            string path = item.musicFileUrl;
+        }
+<td>
+    <audio controls>
+        <source src="@path" type="audio/mpeg">
+
+        Your browser does not support the audio tag.
+    </audio>
+</td>
+<td>
+    @Html.ActionLink("Edit", "Edit", new { id = item.musicFileId }) |
+@Html.ActionLink("Details", "Details", new { id = item.musicFileId }) |
+@Html.ActionLink("Delete", "Delete", new { id = item.musicFileId })
+</td>
+</tr>
+}
+</table>

@@ -19,7 +19,12 @@ namespace MusicSharing.Controllers
         public ActionResult SearchMp3()
         {
             Log.Info("SearchMp3 accessed by " + User.Identity.GetUserName());
-            return View();
+
+            dynamic materials = new System.Dynamic.ExpandoObject();
+            DefaultConnection db = new DefaultConnection();
+            
+            
+            return View(db.MusicFile.ToList());
         }
         [Authorize(Roles = "Admin")]
         public ActionResult AddMp3()
@@ -31,8 +36,6 @@ namespace MusicSharing.Controllers
        // [Authorize(Roles = "Admin")]
         public ActionResult AddMusic()
         {
-
-           
             if (Request.Files.Count > 0)
             {
                 try

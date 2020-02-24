@@ -5,13 +5,14 @@
 }
 @{
     Layout = "";
+   
 }
 
 <link href="~/Content/loginstyle.css" rel="stylesheet" />
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 
 <body class="align bg">
-    <h2>Music Sharing </h2>
+    <h2> @typeof(Controller).Assembly.GetName().Version </h2>
     <div class="grid">
 
         <div id="login">

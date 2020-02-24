@@ -1,0 +1,25 @@
+2020-02-23 16:59:35,089 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was access MusicSharing Index
+2020-02-23 17:15:41,472 [7] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was access MusicSharing Index
+2020-02-23 21:01:46,936 [7] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was access MusicSharing Index
+2020-02-23 21:07:41,435 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was access MusicSharing Index
+2020-02-23 21:07:55,550 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was  opened Role ManageUsers page
+2020-02-23 21:08:15,103 [7] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was added new role call Admin
+2020-02-23 21:08:23,937 [13] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was added new role call User
+2020-02-23 21:08:31,613 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was  opened Role ManageUsers page
+2020-02-23 21:08:49,720 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was  Assign role to User :Admin@gmail.com
+2020-02-23 21:10:13,107 [8] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was access MusicSharing Index
+2020-02-23 21:15:01,868 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was access MusicSharing Index
+2020-02-23 21:59:02,871 [8] INFO  MusicSharing.Controllers.DefaultController [(null)] - Add new mp3 file byadmin@gmail.com - file.FileName
+2020-02-23 22:31:43,091 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-23 22:36:16,540 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-23 22:36:36,515 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-23 22:41:52,783 [17] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-23 22:55:08,653 [17] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-23 22:55:47,861 [17] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-23 22:58:57,156 [17] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-23 22:59:14,384 [17] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-23 22:59:17,159 [17] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-23 22:59:48,525 [52] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-23 23:02:12,564 [53] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-23 23:05:15,258 [57] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-23 23:05:26,107 [57] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
