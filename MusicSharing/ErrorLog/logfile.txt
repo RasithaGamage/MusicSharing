@@ -1,1 +1,11 @@
 2020-02-23 16:59:35,089 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was access MusicSharing Index
+2020-02-23 17:15:41,472 [7] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was access MusicSharing Index
+2020-02-23 21:01:46,936 [7] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was access MusicSharing Index
+2020-02-23 21:07:41,435 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was access MusicSharing Index
+2020-02-23 21:07:55,550 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was  opened Role ManageUsers page
+2020-02-23 21:08:15,103 [7] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was added new role call Admin
+2020-02-23 21:08:23,937 [13] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was added new role call User
+2020-02-23 21:08:31,613 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was  opened Role ManageUsers page
+2020-02-23 21:08:49,720 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was  Assign role to User :Admin@gmail.com
+2020-02-23 21:10:13,107 [8] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was access MusicSharing Index
+2020-02-23 21:15:01,868 [6] INFO  MusicSharing.Controllers.DefaultController [(null)] - admin@gmail.com Was access MusicSharing Index
