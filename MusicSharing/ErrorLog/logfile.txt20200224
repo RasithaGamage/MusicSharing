@@ -1,0 +1,22 @@
+2020-02-24 00:32:31,771 [47] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-24 00:34:01,412 [62] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-24 23:19:10,264 [12] INFO  MusicSharing.Controllers.DefaultController [(null)] - SearchMp3 accessed by admin@gmail.com
+2020-02-24 23:47:17,258 [6] ERROR MusicSharing.Controllers.DefaultController [(null)] - Error occored when Upload Music by admin@gmail.com
+System.Web.HttpException (0x80004005): 'D:/Android/' is a physical path, but a virtual path was expected.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.VirtualPath.Combine(VirtualPath relativePath)
+   at System.Web.HttpRequest.MapPath(VirtualPath virtualPath, VirtualPath baseVirtualDir, Boolean allowCrossAppMapping)
+   at System.Web.HttpServerUtility.MapPath(String path)
+   at MusicSharing.Controllers.MusicController.AddMusic() in G:\projects\MusicSharing\MusicSharing\Controllers\MusicController.cs:line 60
+2020-02-24 23:50:17,881 [7] ERROR MusicSharing.Controllers.DefaultController [(null)] - Error occored when Upload Music by admin@gmail.com
+System.NotSupportedException: The given path's format is not supported.
+   at System.Security.Util.StringExpressionSet.CanonicalizePath(String path, Boolean needFullPath)
+   at System.Security.Util.StringExpressionSet.CreateListFromExpressions(String[] str, Boolean needFullPath)
+   at System.Security.Permissions.FileIOPermission.AddPathList(FileIOPermissionAccess access, AccessControlActions control, String[] pathListOrig, Boolean checkForDuplicates, Boolean needFullPath, Boolean copyPathList)
+   at System.Security.Permissions.FileIOPermission..ctor(FileIOPermissionAccess access, String path)
+   at System.Web.InternalSecurityPermissions.PathDiscovery(String path)
+   at System.Web.HttpRequest.MapPath(VirtualPath virtualPath, VirtualPath baseVirtualDir, Boolean allowCrossAppMapping)
+   at System.Web.HttpServerUtility.MapPath(String path)
+   at MusicSharing.Controllers.MusicController.AddMusic() in G:\projects\MusicSharing\MusicSharing\Controllers\MusicController.cs:line 60
+2020-02-24 23:53:32,551 [7] INFO  MusicSharing.Controllers.DefaultController [(null)] - Add new mp3 file byadmin@gmail.com - file.FileName

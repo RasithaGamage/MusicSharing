@@ -3,7 +3,8 @@
     ViewBag.Title = "SearchMp3";
 }
 
-<h2>SearchMp3</h2>
+<h3>Mp3 List</h3>
+<br/>
 
 @model IEnumerable<MusicSharing.Models.MusicFile>
 
@@ -23,8 +24,11 @@
             @Html.DisplayNameFor(model => model.size)
         </th>
         <th>Listen</th>
-        <th>Actions</th>
-    </tr>
+        @if (!this.User.IsInRole("User"))
+        {
+            <th>Actions</th>
+        }
+        </tr>
 @foreach (var item in Model)
 {
     <tr>
@@ -41,16 +45,31 @@
             string path = item.musicFileUrl;
         }
 <td>
-    <audio controls>
-        <source src="172.19.4.94@path" type="audio/mpeg">
 
-        Your browser does not support the audio tag.
-    </audio>
+
+
+    @if (!this.User.IsInRole("User"))
+    {<audio controls>
+            <source src="~/Content/music/@path" type="audio/mpeg">
+        </audio>
+    }
+    else
+    {
+        <audio controls  controlsList="nodownload">
+            <source src="~/Content/music/@path" type="audio/mpeg">
+        </audio>
+
+    }
+
+
 </td>
 <td>
-@Html.ActionLink("Edit", "Edit", new { id = item.musicFileId }) |
-@Html.ActionLink("Details", "Details", new { id = item.musicFileId }) |
-@Html.ActionLink("Delete", "Delete", new { id = item.musicFileId })
+    @if (this.User.IsInRole("Admin"))
+    {
+       @Html.ActionLink("Edit | ", "Edit", new { id = item.musicFileId })
+       @Html.ActionLink("Delete", "Delete", new { id = item.musicFileId })
+    }
+   
 </td>
 </tr>
 }

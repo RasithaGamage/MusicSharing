@@ -1,13 +1,4 @@
-﻿$color: #000;
-$color-bg: #c0c0c0;
-/* ---------- FONTAWESOME ---------- */
-/* ---------- https://fortawesome.github.com/Font-Awesome/ ---------- */
-/* ---------- http://weloveiconfonts.com/ ---------- */
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
-/* ---------- ERIC MEYER'S RESET CSS ---------- */
-/* ---------- https://meyerweb.com/eric/tools/css/reset/ ---------- */
-@import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
-/* ---------- FONTAWESOME ---------- */
+﻿
 [class*="fontawesome-"]:before {
     font-family: 'FontAwesome', sans-serif;
 }

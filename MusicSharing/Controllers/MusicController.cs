@@ -22,18 +22,52 @@ namespace MusicSharing.Controllers
 
             dynamic materials = new System.Dynamic.ExpandoObject();
             DefaultConnection db = new DefaultConnection();
-            
-            
+            foreach (var a in db.MusicFile.ToList())
+            {
+                copyMp3(a.musicFileUrl); 
+            }
+          
             return View(db.MusicFile.ToList());
         }
+
+
+        public void copyMp3(string musicFileUrl)
+        {
+
+
+            //Get the full path of the file    
+            //  var fullFilePath  = "\\\\mylab.local\\dfs\\data\\" + musicFileUrl;
+            var fullFilePath = "D:\\Android\\"+ musicFileUrl;
+
+            // Get the destination path
+
+            var copyToPath = Server.MapPath("~/Content/music/"+ musicFileUrl);
+
+            if (!System.IO.File.Exists(copyToPath)) {
+                System.IO.File.Copy(fullFilePath, copyToPath);
+            }
+               
+
+        }
+
         [Authorize(Roles = "Admin")]
         public ActionResult AddMp3()
         {
             return View();
         }
+        [Authorize(Roles = "Admin")]
+        public ActionResult Delete()
+        {
+            return View();
+        }
+        [Authorize(Roles = "Admin")]
+        public ActionResult Edit()
+        {
+            return View();
+        }
 
         [HttpPost]
-       // [Authorize(Roles = "Admin")]
+       [Authorize(Roles = "Admin")]
         public ActionResult AddMusic()
         {
             if (Request.Files.Count > 0)
@@ -57,14 +91,14 @@ namespace MusicSharing.Controllers
                             fname = file.FileName;
                         }
 
-                        string fname1 = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Content/music/"), fname);
-
+                        // string fname1 =  "\\\\mylab.local\\dfs\\data\\"+fname;
+                        string fname1 = "D:\\Android\\" + fname;
                         //use threads
 
                         using (DefaultConnection db=new DefaultConnection()) {
 
                             DateTime dt =  DateTime.Now;
-                            String id =  dt.ToString("yyyyMMddHHmmssffff");
+                            string id =  dt.ToString("yyyyMMddHHmmssffff");
                             var mid =  (from d in db.MusicFile orderby d.musicFileId descending select d.musicFileId).FirstOrDefault();
                             MusicFile music = new MusicFile
                             {
@@ -72,7 +106,7 @@ namespace MusicSharing.Controllers
                                 musicFileName = fname,
                                 songName = Request.Form["songTitle"],
                                 singer = Request.Form["singer"],
-                                musicFileUrl = "/Content/music/"+ fname,
+                                musicFileUrl = fname,
                                 size =  file.ContentLength.ToString(),
                                 addedDate = DateTime.Now
                             };
