@@ -296,6 +296,8 @@
     <Content Include="Views\Music\SearchMp3.cshtml" />
     <Content Include="Views\Music\AddMp3.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Music\Edit.cshtml" />
+    <Content Include="Views\Music\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -69,10 +69,7 @@
        @Html.ActionLink("Edit | ", "Edit", new { id = item.musicFileId })
        @Html.ActionLink("Delete", "Delete", new { id = item.musicFileId })
     }
-    @if (this.User.IsInRole("PaidUser"))
-    {
-       @Html.ActionLink("Download", "Delete", new { id = item.musicFileId })
-    }
+   
 </td>
 </tr>
 }
