@@ -72,7 +72,7 @@ namespace MusicSharing.Controllers
                                 musicFileName = fname,
                                 songName = Request.Form["songTitle"],
                                 singer = Request.Form["singer"],
-                                musicFileUrl = fname1,
+                                musicFileUrl = "/Content/music/"+ fname,
                                 size =  file.ContentLength.ToString(),
                                 addedDate = DateTime.Now
                             };
