@@ -33,9 +33,10 @@ namespace MusicSharing.Controllers
 
         public void copyMp3(string musicFileUrl)
         {
-          
+
 
             //Get the full path of the file    
+            //  var fullFilePath  = "\\\\mylab.local\\dfs\\data\\" + musicFileUrl;
             var fullFilePath = "D:\\Android\\"+ musicFileUrl;
 
             // Get the destination path
